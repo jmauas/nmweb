@@ -1,0 +1,197 @@
+@import "bootstrap/bootstrap";
+@import "cabeza";
+@import "config";
+@import "nav";
+@import "foot";
+@import "btn";
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,600&display=swap');
+
+
+
+/* ----------------------------------------------------
+ CSS 
+-----------------------------------------------------*/
+/* ETIQUETAS */
+header {
+    grid-area: header;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+aside {
+    grid-area: aside;
+    margin: 5px;
+}
+
+footer {
+    grid-area: footer;
+}
+
+section {
+    grid-area: section;
+}
+
+
+
+/* FIN ETIQUETAS */
+
+/* CLASES */
+.grid_c {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "aside contenido"
+    "aside footer";
+    grid-template-columns: 20% auto;
+    grid-template-rows: 150px auto auto;
+    grid-column-gap: 2px;
+}
+
+.contenido {
+    grid-area: contenido;
+}
+
+.cabezaFactura {
+    font-size:medium;
+    margin: 15px;
+    padding: 3px;
+    
+}
+
+.titulo {
+    text-align: center;
+}
+
+.colProd {
+    width: 35%;
+}
+.colCant {
+    width: 10%;
+}
+.colPr {
+    width: 20%;
+}
+.colBoni {
+    width: 15%;
+}
+.colTot {
+    width: 15%;
+}
+.nombre {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    font-size: medium;
+    text-align: left;
+}
+.numero {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size:medium;
+    text-align: right;
+}
+.campo {
+    font-size: medium;
+    margin: 3px;
+    padding: 3px;
+    display: inline;
+    
+}
+.campo:focus {
+    font-size:24px;
+}
+
+.pieFactura {
+    margin:30px;
+    width: 80%;
+    float: right;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+.negrita {
+    font-weight: normal;
+    font-size: 300px;
+}
+
+.grande {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.impo {
+    text-align: right;
+}
+
+.table {
+    box-sizing: content-box;
+    margin:15px;
+}
+.icono {
+    width: 15%;
+    margin: 0px;
+}
+/* FIN CLASES */
+
+
+/* VISTA TABLET */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid_c {
+        display: grid;
+        grid-template-areas:
+        "header"
+        "contenido"
+        "footer";
+        grid-template-columns: auto;
+        grid-template-rows: 15% auto;
+        grid-column-gap: 2px;
+    }
+    .barraSticky {
+        display: none;
+    }
+    .encabezado__logoPpal {
+        width: 25%;
+        margin-bottom: 0px;
+    }
+    .encabezado__nombrePpal {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        margin: 0px;        
+    }
+}
+/* VISTA MOBILE */
+@media only screen and (max-width: 768px) {
+    .grid_c {
+        display: grid;
+        grid-template-areas:
+        "contenido"
+        "footer";
+        grid-template-columns: auto;
+        grid-template-rows: auto 20%;
+        grid-column-gap: 2px;
+    }
+    .encabezado {
+        display: none;
+    }
+    .barraSticky {
+        display: none;
+    }
+   
+}
+/*  */
+/* ID */
+
+/* FIN ID */

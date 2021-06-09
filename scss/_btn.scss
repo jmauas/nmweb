@@ -1,0 +1,27 @@
+$colReg: #5cb85c;
+$colLimp: #f0ad4e;
+$colEli: #d9534f;
+
+@mixin boton ($an, $al, $bg, $col, $tf){
+    width: $an;
+    height: $al;
+    background-color: $bg;
+    color: $col;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+    font-size: $tf;
+    font-weight: bold
+}
+
+
+.btn__reg {
+    @include boton(140px, 55px, $colReg, white, 20px)
+}
+.btn__limp {
+    @include boton(120px, 45px, $colLimp, white, 18px)
+}
+.btn__eli {
+    @include boton(100px, 40px, $colEli, white, 16px)
+}

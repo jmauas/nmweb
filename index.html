@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="sistema de gestión, sistema de gestion, sistema erp, facturación, facturacion.">
+    <meta name="description" content="Sistema de Gestión Integral para Empresas y Pymes. Facturación Electrónica.">
+    <title>NewManag Web</title>
+    <link rel="shortcut icon" href="assets/img/icono.png">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+   
+    <!-- MI CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="grid_c">
+        <!-- Fila de Logo y Empresa -->
+        <header class="encabezado">
+            <div class="encabezado__divLogo">
+                <img class="encabezado__logoPpal" src="assets/img/logoMEQ.png" alt="Logo">
+                <span class="encabezado__nombrePpal">Estudio Mauas, Quiñonez & Asoc.</span>
+            </div>
+            <h1 class="encabezado__tituloP">NewManag WEB v1</h1>
+            <h2 class="encabezado__tituloE">EMPRESA: Estudio Mauas, Quiñonez & Asoc.</h2>
+            <span class="encabezado__fh">10/05/2021 10:53</span>
+        </header>
+        <!-- Fin Logo y Empresa -->
+        <!-- Menu Lateral -->
+        <aside class="barraSticky" data-aos="fade-down-right" data-aos-duration="1500">
+            <ul class="nav flex-column">
+                <li class="nav-item nav__fact">
+                  <a class="nav-link active" style="color:white;" href="index.html">Facturación</a>
+                </li>
+                <li class="nav-item dropdown nav__cons">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Consulta Ventas</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Hoy</a>
+                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Ayer</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Por Fechas</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown nav__conf">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configuración</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="configuracion/configuracion.html">General</a>
+                      <a class="dropdown-item" href="configuracion/configuracion.html">Local</a>
+                    </div>
+                </li>
+            </ul>           
+        </aside>        
+        <!-- Fin Menu Lateral -->
+        <!-- CUERPO DE LA VENTANA -->
+        <section class="contenido">
+            <article>
+                <!-- NOTIFICACION -->
+                <div class="toast bg-warning" role="alert" aria-live="assertive" aria-atomic="true" data-delay="15000">
+                    <div class="toast-header">
+                      <img src="assets/img/icono.png" class="rounded mr-2 icono" alt="...">
+                      <strong class="mr-auto">VENTA TOTAL</strong>
+                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="toast-body" style="font-weight: bold;">
+                      En el Día de Hoy la venta es de $ 152.352.-
+                    </div>
+                </div>
+                <!-- CABEZERA FACTURA -->
+                <div class="cabezaFactura">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="fecha" class="campo">Fecha: </label><br><input type="date" class="campo" id="fecha"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="vend" class="campo">Vendedor: </label><br><input type="number" class="campo" id="vend"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="cliente" class="campo">Cliente: </label><br><input type="number" id="cliente" class="campo"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="lp" class="campo">Lista de Precios: </label><br><input type="number" class="campo" id="lp"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="cp" class="campo">Cond. Pago: </label><br><input type="number" class="campo" id="cp"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="suc" class="campo">Sucursal: </label><br><input type="number" id="suc" class="campo"></div>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- FIN CABEZERA FACTURA -->
+
+                 <!-- DETALLE FACTURA -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="prod" class="campo">Producto: </label><br><input type="number" class="campo" id="prod"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="cant" class="campo">Cantidad: </label><br><input type="number" class="campo" id="cant"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="pr" class="campo">Precio: </label><br><input type="number" class="campo" id="pr"></div>
+                        <div class="col-lg-2 col-md-4 col-sm-3"><label for="boni" class="campo">Bonif: </label><br><input type="number" class="campo" id="boni"></div>
+                        <div class="col-lg-1 col-md-4 col-sm-3" style="display: flex; align-items: flex-end;"><button class="btn btn-success" data-toggle="collapse" data-target="#detalleFc" aria-expanded="true" aria-controls="detalleFc">Cargar</button></div>
+                    </div>
+                    <div class="collapse" id="detalleFc">      
+                        <div class="row">
+                            <table class="table table-striped table-primary table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="colProd titulo">Producto</th>
+                                        <th class="colCant titulo">Cant</th>
+                                        <th class="colPr titulo">Precio</th>
+                                        <th class="colBoni titulo">Bonif.</th>
+                                        <th class="colTot titulo">Total</th>
+                                    </tr>                        
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="colProd nombre">Prod 2</td>
+                                        <td class="colCant numero">15</td>
+                                        <td class="colPr numero">157.63</td>
+                                        <td class="colBoni numero">11.36</td>
+                                        <td class="colTot numero">52.635,15</td>
+                                    </tr>                            
+                                </tbody>                   
+                            </table>                    
+                        </div>
+                    </div>
+                <!-- FIN DETALLE FACTURA -->              
+                <!-- PIE FACTURA -->
+                    <div class="pieFactura">
+                        <p class="total">Total a Cobrar: $ </p>
+                        <p class="total">52.352,15</p>
+                        <input type="button" class="btn btn__reg" value="Registrar">
+                        <input type="button" class="btn btn__limp" value="Limpiar">
+                        <input type="button" class="btn btn__eli" value="Eliminar"></p></tr></table>
+                    </div>
+                </div>
+            <!-- FIN PIE FACTURA -->
+            </article>
+        </section>
+        <!-- FIN CUERPO VENTANA -->
+        <!-- pie de Página -->
+        <footer class="pie pie__fact" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+            <span>VideoTutoriales del Sistema</span>               
+            <div id="yt" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators">
+                    <li data-target="#yt" data-slide-to="0" class="active"></li>
+                    <li data-target="#yt" data-slide-to="1"></li>
+                    <li data-target="#yt" data-slide-to="2"></li>
+                    <li data-target="#yt" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <iframe src="https://www.youtube.com/embed/_9roH8M0Ia8" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/o7Wly0It2sc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/kdNzRu7eyRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/GR_LI3gVN0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- CARGAR BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- PARA CARGAR AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        $(document).ready(function() {
+            $('.toast').toast('show');
+        })
+    </script>
+</body>
+</html>

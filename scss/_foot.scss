@@ -1,0 +1,43 @@
+.pie {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;  
+    justify-content:space-around;  
+    font-weight: regular;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+@for $bg from 1 through 3 {
+    @if $bg==1 {
+        .pie__fact {
+            @extend .pie;
+            background-color: black;
+            color: white;
+        }
+    } @else if $bg==2 {
+        .pie__cons {
+            @extend .pie;
+            background-color: rgb(182, 112, 112);
+            color: white;
+        }
+    } @else if $bg==3 {
+        .pie__conf {
+            @extend .pie;
+            background-color: rgb(190, 187, 187);
+            color: black;
+        }
+    }   
+}
+
+
+a {
+    text-decoration: none;
+} 
+span {
+     margin: 15px;
+     font-family: 'IBM Plex Mono', monospace;
+}
+iframe {
+    margin: 15px;
+}

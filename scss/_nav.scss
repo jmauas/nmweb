@@ -1,0 +1,41 @@
+$navs: (fact: #5cb85c,
+        cons: #0275d8, 
+        conf: #f0ad4e
+    );
+
+@each $nav, $col in $navs {
+    .nav__#{$nav} {
+        background-color: $col;
+        color: white;
+    }
+}
+ul {
+    list-style: none;
+    font-size:0; /* truco por el uso de inline-block*/
+    padding: 15px 15px;
+}
+li {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 6px;
+    background-color: white;
+}
+ul ul {
+    position: relative;
+    display: none;
+}
+ul ul li {
+    display: block;
+}
+ul li ul {
+    transition: all 10s;
+}
+ul li:hover ul {
+    display: block;
+}
+.barraSticky {
+    position:sticky;
+    top: 20px;
+    height: 100%;
+    background-image: radial-gradient(ellipse, lightgrey, antiquewhite);
+}
