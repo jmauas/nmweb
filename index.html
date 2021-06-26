@@ -29,27 +29,35 @@
         <!-- Fin Logo y Empresa -->
         <!-- Menu Lateral -->
         <aside class="barraSticky" data-aos="fade-down-right" data-aos-duration="1500">
-            <ul class="nav flex-column">
-                <li class="nav-item nav__fact">
-                  <a class="nav-link active" style="color:white;" href="index.html">Facturación</a>
-                </li>
-                <li class="nav-item dropdown nav__cons">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Consulta Ventas</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Hoy</a>
-                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Ayer</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="consultas/consulta_ventas.html">Por Fechas</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown nav__conf">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configuración</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="configuracion/configuracion.html">General</a>
-                      <a class="dropdown-item" href="configuracion/configuracion.html">Local</a>
-                    </div>
-                </li>
-            </ul>           
+            <div id="cuerpo_Sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item nav__fact">
+                    <a class="nav-link active" style="color:white;" href="index.html">Facturación</a>
+                    </li>
+                    <li class="nav-item dropdown nav__cons">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Consulta Ventas</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="pages/consultas/consulta_ventas.html">Hoy</a>
+                        <a class="dropdown-item" href="pages/consultas/consulta_ventas.html">Ayer</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="pages/consultas/consulta_ventas.html">Por Fechas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown nav__cons">
+                        <a class="nav-link active" style="color:white;" href="pages/tutoriales/videotutoriales.html">Tutoriales</a>
+                    </li>
+                    <li class="nav-item dropdown nav__conf">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configuración</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="pages/configuracion/configuracion.html">General</a>
+                        <a class="dropdown-item" href="pages/configuracion/configuracion.html">Local</a>
+                        </div>
+                    </li>
+                </ul>   
+            </div>
+            <div class="logo_Sticky">
+                <img class="nav__logoPpal" src="../../assets/img/LogoMEQ.png" alt="Logo">
+            </div>        
         </aside>        
         <!-- Fin Menu Lateral -->
         <!-- CUERPO DE LA VENTANA -->
@@ -231,30 +239,9 @@
         </section>
         <!-- FIN CUERPO VENTANA -->
         <!-- pie de Página -->
-        <footer class="pie pie__fact" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-            <span>VideoTutoriales del Sistema</span>               
-            <div id="yt" class="carousel slide" data-ride="carousel" data-interval="3000">
-                <ol class="carousel-indicators">
-                    <li data-target="#yt" data-slide-to="0" class="active"></li>
-                    <li data-target="#yt" data-slide-to="1"></li>
-                    <li data-target="#yt" data-slide-to="2"></li>
-                    <li data-target="#yt" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <iframe src="https://www.youtube.com/embed/_9roH8M0Ia8" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe src="https://www.youtube.com/embed/o7Wly0It2sc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe src="https://www.youtube.com/embed/kdNzRu7eyRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe src="https://www.youtube.com/embed/GR_LI3gVN0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+        <footer class="pie">
+            <span>Copyrigth 2021. Estudio Mauas, Quiñonez & Asoc.</span>               
+            <a href="http://estudiomq.com.ar" class="link">www.estudiomq.com.ar</a>
         </footer>
     </div>
     <!-- CARGAR BOOTSTRAP -->

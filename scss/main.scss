@@ -33,8 +33,6 @@ section {
     grid-area: section;
 }
 
-
-
 /* FIN ETIQUETAS */
 
 /* CLASES */
@@ -44,9 +42,14 @@ section {
     "header header"
     "aside contenido"
     "aside footer";
-    grid-template-columns: 20% auto;
-    grid-template-rows: 150px auto auto;
+    grid-template-columns: 14% 83%;
+    grid-template-rows: 150px auto 40px;
     grid-column-gap: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .contenido {
@@ -118,8 +121,6 @@ section {
     font-weight: bold;
 }
 
-
-
 .negrita {
     font-weight: normal;
     font-size: 300px;
@@ -142,6 +143,20 @@ section {
 .icono {
     width: 15%;
     margin: 0px;
+}
+.link:link, .link:visited, .link:active {
+    color: white;
+    text-decoration:none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+.cont__YT {
+    text-align: center;
+}
+.videoYT {
+    width: 900px;
+    height: 500px;
 }
 /* FIN CLASES */
 

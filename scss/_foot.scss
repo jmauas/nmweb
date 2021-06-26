@@ -1,4 +1,5 @@
 .pie {
+    grid-area: footer;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;  
@@ -6,29 +7,11 @@
     font-weight: regular;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
+    background-color: black;
+    color: white;
 }
 
-@for $bg from 1 through 3 {
-    @if $bg==1 {
-        .pie__fact {
-            @extend .pie;
-            background-color: black;
-            color: white;
-        }
-    } @else if $bg==2 {
-        .pie__cons {
-            @extend .pie;
-            background-color: rgb(182, 112, 112);
-            color: white;
-        }
-    } @else if $bg==3 {
-        .pie__conf {
-            @extend .pie;
-            background-color: rgb(190, 187, 187);
-            color: black;
-        }
-    }   
-}
+
 
 
 a {

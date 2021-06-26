@@ -7282,28 +7282,35 @@ ul li:hover ul {
   position: sticky;
   top: 20px;
   height: 100%;
-  background-image: radial-gradient(ellipse, lightgrey, antiquewhite); }
+  background-image: radial-gradient(ellipse, lightgrey, antiquewhite);
+  display: grid;
+  grid-template-areas: "cuerpo_S" "logo_S";
+  grid-template-columns: auto;
+  grid-template-rows: 90% 10%; }
 
-.pie, .pie__fact, .pie__cons, .pie__conf {
+.cuerpo_Sticky {
+  grid-area: cuerpo_S; }
+
+.logo_Sticky {
+  grid-area: logo_S;
+  text-align: center;
+  overflow: hidden; }
+
+.nav__logoPpal {
+  width: 80px;
+  margin-bottom: 0px; }
+
+.pie {
+  grid-area: footer;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
   font-weight: regular;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 16px; }
-
-.pie__fact {
+  font-size: 16px;
   background-color: black;
   color: white; }
-
-.pie__cons {
-  background-color: #b67070;
-  color: white; }
-
-.pie__conf {
-  background-color: #bebbbb;
-  color: black; }
 
 a {
   text-decoration: none; }
@@ -7376,9 +7383,14 @@ section {
 .grid_c {
   display: grid;
   grid-template-areas: "header header" "aside contenido" "aside footer";
-  grid-template-columns: 20% auto;
-  grid-template-rows: 150px auto auto;
-  grid-column-gap: 2px; }
+  grid-template-columns: 14% 83%;
+  grid-template-rows: 150px auto 40px;
+  grid-column-gap: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
 
 .contenido {
   grid-area: contenido; }
@@ -7459,6 +7471,20 @@ section {
 .icono {
   width: 15%;
   margin: 0px; }
+
+.link:link, .link:visited, .link:active {
+  color: white;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: normal; }
+
+.cont__YT {
+  text-align: center; }
+
+.videoYT {
+  width: 900px;
+  height: 500px; }
 
 /* FIN CLASES */
 /* VISTA TABLET */

@@ -38,4 +38,23 @@ ul li:hover ul {
     top: 20px;
     height: 100%;
     background-image: radial-gradient(ellipse, lightgrey, antiquewhite);
+    display: grid;
+    grid-template-areas:
+    "cuerpo_S"
+    "logo_S";
+    grid-template-columns: auto;
+    grid-template-rows: 90% 10%;
+}
+
+.cuerpo_Sticky {
+    grid-area: cuerpo_S;
+}
+.logo_Sticky {
+    grid-area: logo_S;
+    text-align: center;
+    overflow:hidden;
+}
+.nav__logoPpal {
+    width: 80px;
+    margin-bottom: 0px;
 }
