@@ -11,8 +11,20 @@
     color: white;
 }
 
-
-
+.link:link, .link:visited, .link:active {
+    color: white;
+    text-decoration:none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+.link {
+    color: white;
+    text-decoration:none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
 
 a {
     text-decoration: none;
