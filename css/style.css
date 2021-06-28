@@ -7301,6 +7301,12 @@ ul li:hover ul {
   width: 80px;
   margin-bottom: 0px; }
 
+.texto-nav {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: normal; }
+
 .pie {
   grid-area: footer;
   display: flex;
@@ -7338,7 +7344,7 @@ iframe {
   margin: 15px; }
 
 .btn__reg {
-  width: 140px;
+  width: 100px;
   height: 55px;
   background-color: #5cb85c;
   color: white;
@@ -7350,7 +7356,7 @@ iframe {
   font-weight: bold; }
 
 .btn__limp {
-  width: 120px;
+  width: 80px;
   height: 45px;
   background-color: #f0ad4e;
   color: white;
@@ -7362,7 +7368,7 @@ iframe {
   font-weight: bold; }
 
 .btn__eli {
-  width: 100px;
+  width: 70px;
   height: 40px;
   background-color: #d9534f;
   color: white;
@@ -7398,7 +7404,7 @@ section {
 .grid_c {
   display: grid;
   grid-template-areas: "header header" "aside contenido" "aside footer";
-  grid-template-columns: 14% 83%;
+  grid-template-columns: 250px auto;
   grid-template-rows: 150px auto 40px;
   grid-column-gap: 2px;
   position: absolute;
@@ -7455,9 +7461,9 @@ section {
   font-size: 24px; }
 
 .pieFactura {
-  margin: 30px;
-  width: 80%;
-  float: right;
+  margin-top: 30px;
+  width: 100%;
+  float: left;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -7465,7 +7471,7 @@ section {
 
 .total {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold; }
 
 .negrita {
@@ -7506,11 +7512,11 @@ section {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .grid_c {
     display: grid;
-    grid-template-areas: "header" "contenido" "footer";
-    grid-template-columns: auto;
-    grid-template-rows: 15% auto;
+    grid-template-areas: "header header" "aside contenido" "aside footer";
+    grid-template-columns: 80px auto;
+    grid-template-rows: 150px auto 40px;
     grid-column-gap: 2px; }
-  .barraSticky {
+  .texto-nav {
     display: none; }
   .encabezado__logoPpal {
     width: 25%;
@@ -7519,20 +7525,28 @@ section {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10px;
     font-weight: bold;
-    margin: 0px; } }
+    margin: 0px; }
+  .nav__logoPpal {
+    width: 40px;
+    margin-bottom: 0px; } }
 
 /* VISTA MOBILE */
 @media only screen and (max-width: 768px) {
   .grid_c {
     display: grid;
-    grid-template-areas: "contenido" "footer";
-    grid-template-columns: auto;
-    grid-template-rows: auto 20%;
+    grid-template-areas: "aside contenido" "aside footer";
+    grid-template-columns: 80px auto;
+    grid-template-rows: auto 40px;
     grid-column-gap: 2px; }
   .encabezado {
     display: none; }
-  .barraSticky {
-    display: none; } }
+  .pie {
+    display: none; }
+  .texto-nav {
+    display: none; }
+  .nav__logoPpal {
+    width: 40px;
+    margin-bottom: 0px; } }
 
 /*  */
 /* ID */

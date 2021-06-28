@@ -17,11 +17,11 @@ $colEli: #d9534f;
 
 
 .btn__reg {
-    @include boton(140px, 55px, $colReg, white, 20px)
+    @include boton(100px, 55px, $colReg, white, 20px)
 }
 .btn__limp {
-    @include boton(120px, 45px, $colLimp, white, 18px)
+    @include boton(80px, 45px, $colLimp, white, 18px)
 }
 .btn__eli {
-    @include boton(100px, 40px, $colEli, white, 16px)
+    @include boton(70px, 40px, $colEli, white, 16px)
 }
