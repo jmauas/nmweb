@@ -1,5 +1,17 @@
 let productos = [];
 function cargarProducto() {
+    if ($('#prod').val() == ''){
+        alert("INGRESE NOMBRE DEL PRODUCTO.")
+        return;
+    }
+    if (!esNumero($('#cant').val())){
+        alert("INGRESE CANTIDAD DEL PRODUCTO.")
+        return;
+    }
+    if (!esNumero($('#pr').val())){
+        alert("INGRESE PRECIO DEL PRODUCTO.")
+        return;
+    }    
     let prod = {
         nombre: $('#prod').val(),
         cant: $('#cant').val(),
@@ -31,4 +43,14 @@ function subTotal(cant, pr, boni) {
 
 function formatoSepMiles(valor) {
 	return new Intl.NumberFormat("de-DE").format(valor);
+}
+
+function esNumero(txt) {
+	if (txt == undefined){txt = ''}
+	txt = txt.toString();
+	let num = txt.replaceAll(',', '.');
+	var rsdo = true;
+	if (isNaN(num)) {rsdo = false;} 
+	if (num == '') {rsdo = false;}
+	return rsdo
 }
