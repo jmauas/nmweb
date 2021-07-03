@@ -96,13 +96,13 @@
                  <!-- DETALLE FACTURA -->
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="prod" class="campo">Producto: </label><br><input type="number" class="campo" id="prod"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6"><label for="prod" class="campo">Producto: </label><br><input type="text" class="campo" id="prod"></div>
                         <div class="col-lg-2 col-md-4 col-sm-6"><label for="cant" class="campo">Cantidad: </label><br><input type="number" class="campo" id="cant"></div>
                         <div class="col-lg-3 col-md-4 col-sm-6"><label for="pr" class="campo">Precio: </label><br><input type="number" class="campo" id="pr"></div>
                         <div class="col-lg-2 col-md-4 col-sm-3"><label for="boni" class="campo">Bonif: </label><br><input type="number" class="campo" id="boni"></div>
-                        <div class="col-lg-1 col-md-4 col-sm-3" style="display: flex; align-items: flex-end;"><button class="btn btn-success" data-toggle="collapse" data-target="#detalleFc" aria-expanded="true" aria-controls="detalleFc">Cargar</button></div>
+                        <div class="col-lg-1 col-md-4 col-sm-3" style="display: flex; align-items: flex-end;"><button class="btn btn-success" onclick="cargarProducto()">Cargar</button></div>
                     </div>
-                    <div class="collapse" id="detalleFc">      
+                    <div>      
                         <div class="row">
                             <table class="table table-striped table-primary table-hover">
                                 <thead>
@@ -114,112 +114,7 @@
                                         <th class="colTot titulo">Total</th>
                                     </tr>                        
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="colProd nombre">Prod 2</td>
-                                        <td class="colCant numero">15</td>
-                                        <td class="colPr numero">157.63</td>
-                                        <td class="colBoni numero">11.36</td>
-                                        <td class="colTot numero">52.635,15</td>
-                                    </tr>                            
+                                <tbody id="detalleFc">                                                           
                                 </tbody>                   
                             </table>                    
                         </div>
@@ -230,7 +125,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 col-sm-6"><p class="total">Total a Cobrar: $ </p></div>
-                                <div class="col-lg-3 col-md-4 col-sm-6"><p class="total">52.352,15</p></div>
+                                <div class="col-lg-3 col-md-4 col-sm-6"><p class="total" id="total">0</p></div>
                                 <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__reg" value="Registrar"></div>
                                 <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__limp" value="Limpiar"></div>
                                 <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__eli" value="Eliminar"></div>
@@ -261,5 +156,7 @@
             $('.toast').toast('show');
         })
     </script>
+    <!-- PARA FACTURAR -->
+    <script src="js/main.js"></script>
 </body>
 </html>
