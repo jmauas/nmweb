@@ -17,17 +17,16 @@ class producto {
 
 let productos = [];
 
-function cargarProducto() {
-    
+function cargarProducto() {    
     if ($('#prod').val() == ''){
         alert("INGRESE NOMBRE DEL PRODUCTO.")
         return;
     }
-    if (!esNumero($('#cant').val())){
+    else if (!esNumero($('#cant').val())){
         alert("INGRESE CANTIDAD DEL PRODUCTO.")
         return;
     }
-    if (!esNumero($('#pr').val())){
+    else if (!esNumero($('#pr').val())){
         alert("INGRESE PRECIO DEL PRODUCTO.")
         return;
     }    
@@ -52,17 +51,7 @@ function cargarProducto() {
         html += '   <td class="colTot numero">'+formatoSepMiles(prod.total)+'</td>';
         html += '</tr>';
         total += prod.total;
-    }
-    // for (let i = 0; i<= productos.length - 1;i++) {
-    //     html += '<tr>';
-    //     html += '   <td class="colProd nombre">'+productos[i]['nombre']+'</td>';
-    //     html += '   <td class="colCant numero">'+formatoSepMiles(productos[i]['cant'])+'</td>';
-    //     html += '   <td class="colPr numero">'+formatoSepMiles(productos[i]['pr'])+'</td>';
-    //     html += '   <td class="colBoni numero">'+formatoSepMiles(productos[i]['boni'])+'</td>';
-    //     html += '   <td class="colTot numero">'+formatoSepMiles(productos[i]['total'])+'</td>';
-    //     html += '</tr>';
-    //     total += productos[i]['total'];
-    // }
+    }   
     $('#detalleFc').html(html);
     $('#total').text(formatoSepMiles(total));
 }
