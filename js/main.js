@@ -1,3 +1,16 @@
+const btnC = document.getElementById("btnProd");
+btnC.addEventListener("click", cargarProducto);
+const btnR = document.getElementById("btnRecuperar");
+btnR.addEventListener("click", recuperarProd);
+const btnV = document.getElementById("btnVaciar");
+btnV.addEventListener("click", vaciarProd);
+const btnReg = document.getElementById("btnReg");
+btnReg.addEventListener("click", registrar);
+
+let hoy = new Date();
+$('#fecha').val(fechaAmericana(formatoFecha(hoy), 0));
+
+
 class Producto {
     constructor(nombre, cant, precio, boni, total) {
         this.nombre = nombre.toUpperCase();
@@ -18,17 +31,23 @@ class Producto {
 
 let productos = [];
 
-function cargarProducto() {    
+function cargarProducto() {   
     if ($('#prod').val() == ''){
-        alert("INGRESE NOMBRE DEL PRODUCTO.")
+        swal("INGRESE NOMBRE DEL PRODUCTO.", {
+            icon: "error",
+        });
         return;
     }
     else if (!esNumero($('#cant').val())){
-        alert("INGRESE CANTIDAD DEL PRODUCTO.")
+        swal("INGRESE CANTIDAD DEL PRODUCTO.", {
+            icon: "error",
+        });
         return;
     }
     else if (!esNumero($('#pr').val())){
-        alert("INGRESE PRECIO DEL PRODUCTO.")
+        swal("INGRESE PRECIO DEL PRODUCTO.", {
+            icon: "error",
+        });
         return;
     }    
     const prod = new Producto (
@@ -63,28 +82,17 @@ function armarTablaProd (prods) {
 }
 
 
-
-function formatoSepMiles(valor) {
-	return new Intl.NumberFormat("de-DE").format(valor);
-}
-
-function esNumero(txt) {
-	if (txt == undefined){txt = ''}
-	txt = txt.toString();
-	let num = txt.replaceAll(',', '.');
-	var rsdo = true;
-	if (isNaN(num)) {rsdo = false;} 
-	if (num == '') {rsdo = false;}
-	return rsdo
-}
-
 function recuperarProd() {
     const prod = JSON.parse(localStorage.getItem('Productos'));
     if (prod != '' && prod != null) {
         armarTablaProd(prod);
-        swal("Productos Recuperados","", "success");
+        swal("Productos Recuperados", {
+            icon: "success",
+        });
     } else {
-        swal("No se Econtraron Productos","", "error");
+        swal("No se Econtraron Productos", {
+            icon: "error",
+        });
     }
 }
 
@@ -102,39 +110,37 @@ function vaciarProd() {
         } else {
             return;
         }
-    });	    
+    });
+}
+
+function registrar() {
+    const fecha = document.getElementById('fecha');
+    const vend = document.getElementById('vend');
+    const cliente = document.getElementById('cliente');
+    const lp = document.getElementById('lp');
+    const cp = document.getElementById('cp');
+    const suc = document.getElementById('suc');
+    if (control("Fecha", fecha)==false) return;
+    if (control("Vendedor", vend)==false) return;
+    if (control("Cliente", cliente)==false) return;
+    if (control("Lista de Precios", lp)==false) return;
+    if (control("Condición de Pago", cp)==false) return;
+    if (control("Sucursal", suc)==false) return;
+    $('#tituloResumen').text("Resumen de tu Factura");
+    $('#textoResumen1').text("El Importe Total de tu Compra es de $ "+$('#total').text()+".");
+    $('#textoResumen2').text("Si abonás en Efectivo, podemos ofrecerte un 10 % de Bonificación Adicional. Gracias por tu Compra.");
+    $('#resumen').css("display", "inline-block");
+}
+
+function control(nombre, elem) {
+    if (elem.value=='' || elem.value==0) {
+        swal("FALTA VALOR PARA EL CAMPO "+nombre+".", {
+            icon: "error",
+        });
+        return false;
+    } else{
+        return true;
+    }
 }
 
 
-var toast = function(msg, tiempo, warning)	{
-	if (tiempo == undefined) {tiempo = 400;}
-	let color = "black";
-	let colorF = "WhiteSmoke";
-	if (warning == undefined) {
-		warning = "";
-	} else if (warning == '1') {
-		warning = "<i class='fa fa-warning fa-3x'></i>&nbsp";
-		colorF = "#FF3339";
-		color = "white";
-	} else if (warning == '2') {
-		warning = "<i class='fa fa-check fa-3x'></i>&nbsp";
-		colorF = "#D3F18A";
-	}
-	let html = '<div class="ui-loader ui-overlay-shadow ui-body-e ui-corner-all" style="color:'+color+'; background-color:'+colorF+'; text-decoration: none">';
-	html += '<table><tr><th>'+warning+'</th><th><h3 class"tituloVentana">'+msg+'</h3></th></tr></table></div>';
-	$(html).css({
-		display: "block",
-		opacity: 0.9,
-		position: "fixed",
-		padding: "7px",
-		"text-align": "center",
-		width: "330px",
-		left: ($(window).width() - 284)/2,
-		top: $(window).height()/2 - $(window).height() * 0.2 
-	})
-	/* .appendTo($.mobile.pageContainer).delay(2500) */
-	.appendTo('.container').delay(2500)
-	.fadeOut(tiempo, function(){
-		$(this).remove();
-	});
-}

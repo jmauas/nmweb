@@ -100,7 +100,7 @@
                         <div class="col-lg-2 col-md-4 col-sm-6"><label for="cant" class="campo">Cantidad: </label><br><input type="number" class="campo" id="cant"></div>
                         <div class="col-lg-3 col-md-4 col-sm-6"><label for="pr" class="campo">Precio: </label><br><input type="number" class="campo" id="pr"></div>
                         <div class="col-lg-2 col-md-4 col-sm-3"><label for="boni" class="campo">Bonif: </label><br><input type="number" class="campo" id="boni"></div>
-                        <div class="col-lg-1 col-md-4 col-sm-3" style="display: flex; align-items: flex-end;"><button class="btn btn-success" onclick="cargarProducto()">Cargar</button></div>
+                        <div class="col-lg-1 col-md-4 col-sm-3" style="display: flex; align-items: flex-end;"><button class="btn btn-success" id="btnProd">Cargar</button></div>
                     </div>
                     <div>      
                         <div class="row">
@@ -126,19 +126,27 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 col-sm-6"><p class="total">Total a Cobrar: $ </p></div>
                                 <div class="col-lg-3 col-md-4 col-sm-6"><p class="total" id="total">0</p></div>
-                                <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__reg" value="Registrar"></div>
+                                <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__reg" id="btnReg" value="Registrar"></div>
                                 <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__limp" value="Limpiar"></div>
                                 <div class="col-lg-2 col-md-4 col-sm-6"><input type="button" class="btn btn__eli" value="Eliminar"></div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-md-6 col-sm-6"><button class="btn btn-primary" onClick="recuperarProd()"><i class="fa fa-arrow-circle-up fa-1x"></i> Recuperar Productos</button></div>
-                                <div class="col-lg-3 col-md-6 col-sm-6"><button class="btn btn-danger" onClick="vaciarProd()"><i class="fa fa-trash fa-1x"></i> Variar Productos</button></div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"><button class="btn btn-primary" id="btnRecuperar"><i class="fa fa-arrow-circle-up fa-1x"></i> Recuperar Productos</button></div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"><button class="btn btn-danger" id="btnVaciar"><i class="fa fa-trash fa-1x"></i> Variar Productos</button></div>
                             </div>
                         </div>
                     </div>
+                    <!-- FIN PIE FACTURA -->
                 </div>
-            <!-- FIN PIE FACTURA -->
             </article>
+            <!-- TARJETA RESUMEN -->
+            <div class="card w-75 text-white bg-success mb-3 mt-3 border-danger" style="width: 18rem; display:none;" id="resumen">
+                <div class="card-body">
+                    <h5 class="card-title" id="tituloResumen"></h5>
+                    <p class="card-text" id="textoResumen1"></p>
+                    <p class="card-text" id="textoResumen2"></p>
+                </div>
+            </div>
         </section>
         <!-- FIN CUERPO VENTANA -->
         <!-- pie de Página -->
@@ -163,6 +171,7 @@
         })
     </script>
     <!-- PARA FACTURAR -->
+    <script src="js/herramientas.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
