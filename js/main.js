@@ -77,8 +77,8 @@ function armarTablaProd (prods) {
         total += prod.total;
     }
     localStorage.setItem("Productos", JSON.stringify(prods));
-    document.getElementById('detalleFc').innerHTML = html;
-    document.getElementById('total').innerHTML = formatoSepMiles(total);
+    $('#detalleFc').html(html);
+    $('#total').html(formatoSepMiles(total));
 }
 
 
