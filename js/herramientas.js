@@ -1,56 +1,4 @@
 
-class Producto {
-    constructor(nombre, cant, precio, boni, total) {
-        this.nombre = nombre.toUpperCase();
-        this.cant = parseFloat(cant);
-        this.precio = parseFloat(precio);
-        this.boni = parseFloat(boni);
-        this.total = 0;
-    }
-    sumaIva() {
-        this.precio = this.precio * 1.21;
-    }
-    subTotal() {
-        let subT = Math.round(this.cant * this.precio, 0);
-        this.total = Math.round(subT * ((100 - this.boni) / 100), 0);
-    }
-
-}
-
-let productos = [];
-
-function cargarProducto() {   
-    if ($('#prod').val() == ''){
-        swal("INGRESE NOMBRE DEL PRODUCTO.", {
-            icon: "error",
-        });
-        return;
-    }
-    else if (!esNumero($('#cant').val())){
-        swal("INGRESE CANTIDAD DEL PRODUCTO.", {
-            icon: "error",
-        });
-        return;
-    }
-    else if (!esNumero($('#pr').val())){
-        swal("INGRESE PRECIO DEL PRODUCTO.", {
-            icon: "error",
-        });
-        return;
-    }    
-    const prod = new Producto (
-                        $('#prod').val(),
-                        $('#cant').val(),
-                        $('#pr').val(),
-                        $('#boni').val(),
-                        0
-                    );    
-    prod.sumaIva();
-    prod.subTotal();
-    productos.push(prod);
-    armarTablaProd(productos);
-}
-
 var toast = function(msg, tiempo, warning)	{
 	if (tiempo == undefined) {tiempo = 400;}
 	let color = "black";
@@ -77,7 +25,6 @@ var toast = function(msg, tiempo, warning)	{
 		left: ($(window).width() - 284)/2,
 		top: $(window).height()/2 - $(window).height() * 0.2 
 	})
-	/* .appendTo($.mobile.pageContainer).delay(2500) */
 	.appendTo('.container').delay(2500)
 	.fadeOut(tiempo, function(){
 		$(this).remove();
