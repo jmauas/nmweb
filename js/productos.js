@@ -97,8 +97,26 @@ class ProductoModel {
         swal("Eliminado con Éxito.","", "success");
     }
 
+    registrar(callback) {
+        const json = JSON.stringify(productos);
+        let url = 'http://mauas.com.ar/newM/AppTv2/ws/wsch.php?m=registrarVenta';
+        $.ajax({
+            url : url,
+            data : json,
+            method : 'post', //en este caso
+            dataType : 'json',
+            success : function(response){
+                callback(response);
+            },
+            error: function(error){
+                console.log(error);
+                 toast(error.responseText);
+            }
+        });
+    }
+
     obtener(callback) {
-        let url = 'http://mauas.com.ar/newM/AppTv2/ws/ws.php?m=consultaVentas';
+        let url = 'http://mauas.com.ar/newM/AppTv2/ws/wsch.php?m=consultaVentas';
         $.ajax({
             url: url,
             type: 'GET',
@@ -178,7 +196,9 @@ class ProductoController {
         });
     }
     registrar() {
-        this.productoView.registrar();
+        this.productoModel.registrar((rspta) => {
+            this.productoView.registrar();
+        })
     }
     consultaVentas() {
         this.productoModel.obtener((rspta) => {
